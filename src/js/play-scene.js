@@ -5,7 +5,7 @@ class PlayScene extends Phaser.Scene {
 
     create() {
         // variabel för att hålla koll på hur många gånger vi spikat oss själva
-        this.spiked = 0;
+        // this.spiked = 0;
 
         // ladda spelets bakgrundsbild, statisk
         // setOrigin behöver användas för att den ska ritas från top left
@@ -84,7 +84,7 @@ class PlayScene extends Phaser.Scene {
         this.updateText();
 
         // lägg till en keyboard input för W
-        this.keyObj = this.input.keyboard.addKey('W', true, false);
+        this.keyObj = this.input.keyboard.addKey('P', true, true);
 
         // exempel för att lyssna på events
         this.events.on('pause', function () {
@@ -108,12 +108,12 @@ class PlayScene extends Phaser.Scene {
         // följande kod är från det tutorial ni gjort tidigare
         // Control the player with left or right keys
         if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-200);
+            this.player.setVelocityX(-250);
             if (this.player.body.onFloor()) {
                 this.player.play('walk', true);
             }
         } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(200);
+            this.player.setVelocityX(250);
             if (this.player.body.onFloor()) {
                 this.player.play('walk', true);
             }
@@ -148,7 +148,7 @@ class PlayScene extends Phaser.Scene {
     // metoden updateText för att uppdatera overlaytexten i spelet
     updateText() {
         this.text.setText(
-            `Arrow keys to move. Space to jump. W to pause. Spiked: ${this.spiked}`
+            `Arrow keys to move. Space to jump. W to pause.` //Spiked: ${this.spiked}
         );
     }
 
