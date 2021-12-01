@@ -15,16 +15,21 @@ Saker jag vill göra om det andra går bra
 - [ ] Att kunna dö av ett föremål, exempelvis en istapp.
 
 V48 
+
 Måndag: Movement
 
 Onsdag: Collectives
 
 Fredag: Collectives
 
+
 V49 
+
 Måndag: Collectives (collision, collection) + Scroll view
 
 Onsdag: Scroll view, ny grafik
 
+
 V50
+
 Måndag: Ev nya scener, eller finlir med det som redan finns.
