@@ -1,7 +1,7 @@
 Planering
 - [x] Movement speed
-- [ ] Skapa ett item för collectives
-- [ ] Skapa collisions för collectives
+- [x] Skapa ett item för collectives
+- [x] Skapa collisions för collectives
 - [ ] Gör ett poängsystem för collectives
 - [ ] Följande kamera
 - [ ] Bredare (längre) bana
