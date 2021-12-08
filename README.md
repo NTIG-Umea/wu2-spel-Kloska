@@ -2,7 +2,7 @@ Planering
 - [x] Movement speed
 - [x] Skapa ett item för collectives
 - [x] Skapa collisions för collectives
-- [ ] Gör ett poängsystem för collectives
+- [x] Gör ett poängsystem för collectives
 - [ ] Följande kamera
 - [ ] Bredare (längre) bana
 - [ ] Lägg in ny grafik

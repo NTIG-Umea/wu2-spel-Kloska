@@ -1,6 +1,7 @@
 class PlayScene extends Phaser.Scene {
     constructor() {
         super('PlayScene');
+        this.score = 0;
     }
 
     create() {
@@ -65,10 +66,13 @@ class PlayScene extends Phaser.Scene {
         function collectStar(player, star) {
             star.disableBody(true, true);
 
+            this.score += 10;
+            this.updateText();
+
             if (this.stars.countActive(true) === 0) {
                 //  A new batch of stars to collect
                 this.stars.children.iterate(function (child) {
-                    
+
                     child.enableBody(true, child.x, 0, true, true);
                     child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
                 });
@@ -108,11 +112,8 @@ class PlayScene extends Phaser.Scene {
 
         // skapa text på spelet, texten är tom
         // textens innehåll sätts med updateText() metoden
-        this.text = this.add.text(16, 16, '', {
-            fontSize: '20px',
-            fill: '#ffffff'
-        });
-        this.text.setScrollFactor(0);
+        this.scoreText = this.add.text(16, 16, `Score: ${this.score}`, { fontSize: '32px', fill: '#000' });
+        this.scoreText.setScrollFactor(0);
         this.updateText();
 
         // lägg till en keyboard input för W
@@ -179,8 +180,10 @@ class PlayScene extends Phaser.Scene {
 
     // metoden updateText för att uppdatera overlaytexten i spelet
     updateText() {
-        this.text.setText(
-            `Arrow keys to move.` //Spiked: ${this.spiked}
+        this.scoreText.setText(
+            //`Arrow keys to move.`, //Spiked: ${this.spiked}
+            //`Score:` + this.score
+            'Score: ' + this.score
         );
     }
 
@@ -191,6 +194,7 @@ class PlayScene extends Phaser.Scene {
         player.setX(50);
         player.setY(300);
         player.play('idle', true);
+        this.score = this.score/2;
         let tw = this.tweens.add({
             targets: player,
             alpha: { start: 0, to: 1 },
