@@ -66,7 +66,8 @@ class PlayScene extends Phaser.Scene {
         function collectStar(player, star) {
             star.disableBody(true, true);
 
-            this.score += 10;
+            //this.score += 10;
+            this.score += Math.round(Math.random()*50);
             this.updateText();
 
             if (this.stars.countActive(true) === 0) {
