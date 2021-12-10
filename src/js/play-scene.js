@@ -10,7 +10,7 @@ class PlayScene extends Phaser.Scene {
 
         // ladda spelets bakgrundsbild, statisk
         // setOrigin behöver användas för att den ska ritas från top left
-        this.add.image(0, 0, 'background').setOrigin(0, 0);
+        this.background = this.add.image(0, 0, 'background').setOrigin(0, 0);
 
         // skapa en tilemap från JSON filen vi preloadade
         const map = this.make.tilemap({ key: 'map' });
@@ -79,6 +79,11 @@ class PlayScene extends Phaser.Scene {
                 });
             }
         }
+
+        console.log(this.background)
+        this.cameras.main.setBounds(0, 0, this.background.displayWidth, this.background.displayHeight);
+        this.cameras.main.startFollow(this.player);
+        //this.cameras.main.setLerp(0.1,0.1);
 
         this.spikes = this.physics.add.group({
             allowGravity: false,
