@@ -6,8 +6,8 @@ import MenuScene from './menu-scene';
 // spelets config
 const config = {
     type: Phaser.AUTO,
-    width: 896,
-    height: 448,
+    width: 1600,
+    height: 640,
     pixelArt: true,
     transparent: true,
     physics: {

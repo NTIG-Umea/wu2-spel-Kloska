@@ -15,7 +15,7 @@ class PlayScene extends Phaser.Scene {
         // skapa en tilemap från JSON filen vi preloadade
         const map = this.make.tilemap({ key: 'map' });
         // ladda in tilesetbilden till vår tilemap
-        const tileset = map.addTilesetImage('jefrens_platformer', 'tiles');
+        const tileset = map.addTilesetImage('jefrens_tilesheet', 'tiles');
 
         // initiera animationer, detta är flyttat till en egen metod
         // för att göra create metoden mindre rörig
@@ -94,7 +94,7 @@ class PlayScene extends Phaser.Scene {
         // kan vi ladda in andra lager
         // i tilemappen finns det ett lager Spikes
         // som innehåller spikarnas position
-        console.log(this.platforms);
+        /*console.log(this.platforms);
         map.getObjectLayer('Spikes').objects.forEach((spike) => {
             // iterera över spikarna, skapa spelobjekt
             const spikeSprite = this.spikes
@@ -103,7 +103,8 @@ class PlayScene extends Phaser.Scene {
             spikeSprite.body
                 .setSize(spike.width, spike.height - 20)
                 .setOffset(0, 20);
-        });
+        }); */
+        
         // lägg till en collider mellan spelare och spik
         // om en kollision sker, kör callback metoden playerHit
         this.physics.add.collider(
