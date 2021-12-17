@@ -3,16 +3,16 @@ Planering
 - [x] Skapa ett item för collectives
 - [x] Skapa collisions för collectives
 - [x] Gör ett poängsystem för collectives
-- [ ] Följande kamera
+- [x] Följande kamera (Tror det fungerar, behöver en längre bana för att testa)
 - [ ] Bredare (längre) bana
 - [ ] Lägg in ny grafik
+- [x] Att kunna dö av ett föremål, exempelvis en istapp.
 
 Saker jag vill göra om det andra går bra
 - [ ] Vinst vid viss poäng
 - [ ] Highscore
 - [ ] Skymd sikt
 - [ ] Traps
-- [ ] Att kunna dö av ett föremål, exempelvis en istapp.
 
 V48 
 

@@ -6,7 +6,7 @@ class PlayScene extends Phaser.Scene {
 
     create() {
         // variabel för att hålla koll på hur många gånger vi spikat oss själva
-        // this.spiked = 0;
+        this.spiked = 0;
 
         // ladda spelets bakgrundsbild, statisk
         // setOrigin behöver användas för att den ska ritas från top left
@@ -187,9 +187,8 @@ class PlayScene extends Phaser.Scene {
     // metoden updateText för att uppdatera overlaytexten i spelet
     updateText() {
         this.scoreText.setText(
-            //`Arrow keys to move.`, //Spiked: ${this.spiked}
-            //`Score:` + this.score
-            'Score: ' + this.score
+            //`Arrow keys to move.`, 
+            `Score: ${this.score} Deaths: ${this.spiked}`
         );
     }
 
@@ -200,7 +199,7 @@ class PlayScene extends Phaser.Scene {
         player.setX(50);
         player.setY(300);
         player.play('idle', true);
-        this.score = this.score/2;
+        this.score = Math.round(this.score/2);
         let tw = this.tweens.add({
             targets: player,
             alpha: { start: 0, to: 1 },
