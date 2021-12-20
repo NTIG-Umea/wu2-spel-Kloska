@@ -11,14 +11,19 @@ class PreloadScene extends Phaser.Scene {
         this.load.image('star', 'images/star.png');
         this.load.atlas(
             'player',
-            '/images/jefrens_hero.png',
-            '/images/jefrens_hero.json'
+            '/images/tomte.png',
+            '/images/tomte.json'
         );
         this.load.atlas(
             'foe',
             '/images/jefrens_foe.png',
             '/images/jefrens_foe.json'
         );
+      /*  this.load.atlas(
+            'tomte',
+            '/images/tomte.png',
+            '/images/tomte.json'
+        ) */
         this.load.image('tiles', '/tilesets/jefrens_tilesheet.png');
         // här laddar vi in en tilemap med spelets "karta"
         this.load.tilemapTiledJSON('map', '/tilemaps/level1.json');

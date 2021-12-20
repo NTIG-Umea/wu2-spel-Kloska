@@ -45,8 +45,8 @@ class PlayScene extends Phaser.Scene {
         // skapa en fysik-grupp
         this.stars = this.physics.add.group({
             key: 'star',
-            repeat: 5,
-            setXY: { x: 12, y: 0, stepX: 140 }
+            repeat: 11,
+            setXY: { x: 8, y: 30, stepX: 152}
         });
 
         this.physics.add.collider(this.stars, this.platforms);
@@ -189,7 +189,7 @@ class PlayScene extends Phaser.Scene {
     updateText() {
         this.scoreText.setText(
             //`Arrow keys to move.`, 
-            `Score: ${this.score} Deaths: ${this.spiked}`
+            `Score: ${this.score}`//Deaths: ${this.spiked} 
         );
     }
 
@@ -217,7 +217,18 @@ class PlayScene extends Phaser.Scene {
         this.anims.create({
             key: 'walk',
             frames: this.anims.generateFrameNames('player', {
-                prefix: 'jefrens_',
+                prefix: 'walk_',
+                start: 1,
+                end: 6
+            }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'idle',
+            frames: this.anims.generateFrameNames('player', {
+                prefix: 'idle_',
                 start: 1,
                 end: 4
             }),
@@ -226,15 +237,13 @@ class PlayScene extends Phaser.Scene {
         });
 
         this.anims.create({
-            key: 'idle',
-            frames: [{ key: 'player', frame: 'jefrens_2' }],
-            frameRate: 10
-        });
-
-        this.anims.create({
             key: 'jump',
-            frames: [{ key: 'player', frame: 'jefrens_5' }],
-            frameRate: 10
+            frames: this.anims.generateFrameNames('player', {
+                prefix: 'jump_',
+                start: 1,
+                end: 3
+            }),
+            frameRate: 10,
         });
     }
 }

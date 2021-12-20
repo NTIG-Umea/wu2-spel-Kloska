@@ -6,7 +6,7 @@ import MenuScene from './menu-scene';
 // spelets config
 const config = {
     type: Phaser.AUTO,
-    width: 1600,
+    width: 1750,
     height: 640,
     pixelArt: true,
     transparent: true,
@@ -14,7 +14,7 @@ const config = {
         default: 'arcade',
         arcade: {
             gravity: { y: 400 },
-            debug: true
+            debug: false
         }
     },
     scene: [PreloadScene, PlayScene, MenuScene],
